@@ -8,16 +8,24 @@ class Tile extends StatefulWidget {
 }
 
 class _TileState extends State<Tile> {
+  Color tileColor = Colors.deepPurpleAccent;
+
+  changeColor() {
+    setState(() {
+      tileColor = Colors.deepOrange;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(1),
       child: ClipOval(
         child: Material(
-          color: Colors.deepPurpleAccent, // Button color
+          color: tileColor, // Button color
           child: InkWell(
             splashColor: Colors.deepPurple,
-            onTap: () {},
+            onTap: () => changeColor(),
             child: const SizedBox(width: 36, height: 36),
           ),
         ),

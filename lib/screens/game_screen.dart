@@ -1,4 +1,5 @@
 import 'package:circle_the_cat/colors.dart';
+import 'package:circle_the_cat/widgets/cat.dart';
 import 'package:circle_the_cat/widgets/tiles.dart';
 import 'package:flutter/material.dart';
 
@@ -100,7 +101,7 @@ class _GameScreenState extends State<GameScreen> {
             Tile(),
             Tile(),
             Tile(),
-            Tile(),
+            Cat(),
             Tile(),
             Tile(),
             Tile(),
