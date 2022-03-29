@@ -13,19 +13,33 @@ class _TileState extends State<Tile> {
 
   changeColor() {
     setState(() {
-      tileColor = pink;
+      tileColor = blue;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(1),
+     decoration: BoxDecoration(
+       borderRadius: const BorderRadius.all(
+           Radius.circular(20),
+       ),
+       boxShadow: [
+
+         BoxShadow(
+           color: Colors.black.withOpacity(0.3),
+           spreadRadius: 2,
+           blurRadius: 2,
+           offset: const Offset(2,2), // changes position of shadow
+         ),
+       ],
+     ),
+      margin: const EdgeInsets.all(2),
       child: ClipOval(
         child: Material(
           color: tileColor, // Button color
           child: InkWell(
-            splashColor: pink,
+            splashColor: blue,
             onTap: () => changeColor(),
             child: const SizedBox(width: 36, height: 36),
           ),

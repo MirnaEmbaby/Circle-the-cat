@@ -2,7 +2,7 @@ import 'package:circle_the_cat/colors.dart';
 import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
-   const MainButton(this.players, this.fun);
+    const MainButton(this.players, this.fun, {Key? key}) : super(key: key);
   final String players;
   final Function fun;
 
@@ -13,7 +13,7 @@ class MainButton extends StatelessWidget {
       child: Text(
         players,
         style: const TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 20,
 
         ),
@@ -23,7 +23,7 @@ class MainButton extends StatelessWidget {
           6
         ) ,
         backgroundColor: MaterialStateProperty.all<Color>(
-          pink,
+          blue,
         ),
         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
           const EdgeInsets.symmetric(
@@ -35,7 +35,7 @@ class MainButton extends StatelessWidget {
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18.0),
             side: const BorderSide(
-              color: pink,
+              color: blue,
             ),
           ),
         ),

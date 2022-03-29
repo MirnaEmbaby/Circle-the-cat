@@ -9,7 +9,7 @@ class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
 
   void toGame(BuildContext ctx) {
-    Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (_) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
       return const GameScreen();
     }));
   }

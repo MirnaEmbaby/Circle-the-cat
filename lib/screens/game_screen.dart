@@ -1,6 +1,6 @@
 import 'package:circle_the_cat/colors.dart';
-import 'package:circle_the_cat/widgets/cat.dart';
-import 'package:circle_the_cat/widgets/tiles.dart';
+import 'package:circle_the_cat/widgets/game_button.dart';
+import 'package:circle_the_cat/widgets/grid.dart';
 import 'package:flutter/material.dart';
 
 class GameScreen extends StatefulWidget {
@@ -11,6 +11,10 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
+  void back(BuildContext ctx) {
+    Navigator.of(ctx).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,175 +22,17 @@ class _GameScreenState extends State<GameScreen> {
       height: double.infinity,
       color: purple,
       padding: const EdgeInsets.all(10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Cat(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
-              Tile(),
+          const SizedBox(width: 50),
+          const GameGrid(),
+          const SizedBox(width: 30),
+          Column(
+            children: [
+              GameButton(Icons.pause, back),
+              GameButton(Icons.refresh, back),
+              GameButton(Icons.exit_to_app, back),
             ],
           ),
         ],
