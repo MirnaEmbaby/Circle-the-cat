@@ -1,3 +1,4 @@
+import 'package:circle_the_cat/colors.dart';
 import 'package:flutter/material.dart';
 
 class Tile extends StatefulWidget {
@@ -8,11 +9,11 @@ class Tile extends StatefulWidget {
 }
 
 class _TileState extends State<Tile> {
-  Color tileColor = Colors.deepPurpleAccent;
+  Color tileColor = Colors.deepPurple;
 
   changeColor() {
     setState(() {
-      tileColor = Colors.deepOrange;
+      tileColor = pink;
     });
   }
 
@@ -24,7 +25,7 @@ class _TileState extends State<Tile> {
         child: Material(
           color: tileColor, // Button color
           child: InkWell(
-            splashColor: Colors.deepPurple,
+            splashColor: pink,
             onTap: () => changeColor(),
             child: const SizedBox(width: 36, height: 36),
           ),
